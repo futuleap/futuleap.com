@@ -5,19 +5,16 @@ const { composePlugins, withNx } = require('@nx/next');
 
 const isGithubActions = Boolean(process.env.GITHUB_ACTIONS);
 
-let assetPrefix = '';
-let basePath = '';
+let assetPrefix = undefined;
+let basePath = undefined;
 
 if (isGithubActions) {
-  console.log('github actions')
   const repo = process.env.GITHUB_REPOSITORY
     ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
     : '';
 
   assetPrefix = `/${repo}/`;
   basePath = `/${repo}`;
-  console.log(assetPrefix)
-  console.log(basePath)
 }
 
 /**

@@ -4,6 +4,7 @@ import getAssetPrefix from 'next/config';
 
 export default function Index() {
   const assetPrefix = getAssetPrefix()??'';
+  console.log(assetPrefix)
 
   return (
     <div className={styles.container}>
