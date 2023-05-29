@@ -1,5 +1,4 @@
 # .github/workflows/pages.yml
-
 name: Node.js CI
 
 on:
@@ -12,15 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # https://github.com/actions/checkout
       - uses: actions/checkout@v3
 
-      # a standard step for GitHub actions on Node
-      # https://github.com/actions/setup-node
       - uses: actions/setup-node@v3
         with:
-          # update the Node version to meet your needs
-          node-version: 16
+          node-version: 18
           cache: npm
 
       - name: Install Dependencies
@@ -37,7 +32,6 @@ jobs:
           cp -r dist/apps/futuleap/exported out
 
       - name: Deploy
-        # https://github.com/JamesIves/github-pages-deploy-action
         uses: JamesIves/github-pages-deploy-action@4.4.0
         with:
           branch: gh-pages
