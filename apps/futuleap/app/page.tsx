@@ -3,7 +3,7 @@ import Head from 'next/head';
 import getConfig from 'next/config';
 
 export default function Index() {
-  const { publicRuntimeConfig } = getConfig();
+  const { publicRuntimeConfig } = getConfig() || { publicRuntimeConfig: {} };
   const assetPrefix = publicRuntimeConfig.assetPrefix ?? '';
 
   return (
