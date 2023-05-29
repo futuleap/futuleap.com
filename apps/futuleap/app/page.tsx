@@ -3,7 +3,7 @@ import Head from 'next/head';
 import getAssetPrefix from 'next/config';
 
 export default function Index() {
-  const assetPrefix = getAssetPrefix();
+  const assetPrefix = getAssetPrefix()??'';
 
   return (
     <div className={styles.container}>

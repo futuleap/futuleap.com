@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve futuleap",
-    "export": "nx build futuleap && nx export futuleap"
+    "build": "nx build futuleap",
+    "export": "nx export futuleap"
   },
   "private": true,
   "dependencies": {
