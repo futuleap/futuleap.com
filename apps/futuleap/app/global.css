@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  background-color: #141427;
+}
+
+.contact-email {
+  font-family: 'Roboto', fallback, sans-serif;
+  font-size: 28px;
+  color: #00FBA9;
+  text-align: center;
+  margin-top: 50px
+}
