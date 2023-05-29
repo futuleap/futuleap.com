@@ -9,12 +9,15 @@ let assetPrefix = '';
 let basePath = '';
 
 if (isGithubActions) {
+  console.log('github actions')
   const repo = process.env.GITHUB_REPOSITORY
     ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
     : '';
 
   assetPrefix = `/${repo}/`;
   basePath = `/${repo}`;
+  console.log(assetPrefix)
+  console.log(basePath)
 }
 
 /**
