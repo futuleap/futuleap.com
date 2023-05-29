@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,7 +22,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build exported directory and touch .nojekyll
+      - name: Build exported
         run: npm run export && touch dist/apps/futuleap/exported/.nojekyll
 
       - name: Deploy
