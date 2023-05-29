@@ -3,17 +3,18 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false
+const isGithubActions = Boolean(process.env.GITHUB_ACTIONS);
 
-let assetPrefix = ''
-let basePath = ''
+let assetPrefix = '';
+let basePath = '';
 
 if (isGithubActions) {
-  // trim off `<owner>/`
-  const repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '')
+  const repo = process.env.GITHUB_REPOSITORY
+    ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
+    : '';
 
-  assetPrefix = `/${repo}/`
-  basePath = `/${repo}`
+  assetPrefix = `/${repo}/`;
+  basePath = `/${repo}`;
 }
 
 /**
