@@ -9,10 +9,7 @@ let assetPrefix = '';
 let basePath = '';
 
 if (isGithubActions) {
-  console.log('github actions!')
-  const repo = process.env.GITHUB_REPOSITORY
-    ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-    : '';
+  const repo = 'futuleap.com';
 
   assetPrefix = `/${repo}/`;
   basePath = `/${repo}`;
