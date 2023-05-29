@@ -3,20 +3,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { composePlugins, withNx } = require('@nx/next');
 
-const isGithubActions = Boolean(process.env.GITHUB_ACTIONS);
-
-let assetPrefix = undefined;
-let basePath = undefined;
-
-if (isGithubActions) {
-  const repo = process.env.GITHUB_REPOSITORY
-    ? process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-    : '';
-
-  assetPrefix = `/${repo}/`;
-  basePath = `/${repo}`;
-}
-
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
@@ -27,11 +13,6 @@ const nextConfig = {
     svgr: false,
   },
   trailingSlash: true,
-  assetPrefix: assetPrefix,
-  basePath: basePath,
-  publicRuntimeConfig: {
-    assetPrefix: assetPrefix,
-  },
 };
 
 const plugins = [
