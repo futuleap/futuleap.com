@@ -1,0 +1,38 @@
+# .github/workflows/pages.yml
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build exported directory
+        run: |
+          npm run export
+
+      - name: Copy Exported Directory
+        run: |
+          mkdir -p out
+          touch out/.nojekyll
+          cp -r dist/apps/futuleap/exported out
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.4.0
+        with:
+          branch: gh-pages
+          folder: out
