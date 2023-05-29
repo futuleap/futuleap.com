@@ -13,8 +13,6 @@ const nextConfig = {
     svgr: false,
   },
   trailingSlash: true,
-  basePath: '/futuleap',
-  assetPrefix: '/futuleap/',
 };
 
 const plugins = [
