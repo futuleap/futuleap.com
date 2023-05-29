@@ -1,10 +1,10 @@
 import styles from './page.module.scss';
 import Head from 'next/head';
-import getAssetPrefix from 'next/config';
+import getConfig from 'next/config';
 
 export default function Index() {
-  const assetPrefix = getAssetPrefix()??'';
-  console.log(assetPrefix)
+  const { publicRuntimeConfig } = getConfig();
+  const assetPrefix = publicRuntimeConfig.assetPrefix ?? '';
 
   return (
     <div className={styles.container}>

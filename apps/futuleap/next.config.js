@@ -29,6 +29,9 @@ const nextConfig = {
   trailingSlash: true,
   assetPrefix: assetPrefix,
   basePath: basePath,
+  publicRuntimeConfig: {
+    assetPrefix: assetPrefix,
+  },
 };
 
 const plugins = [
