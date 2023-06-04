@@ -3,20 +3,38 @@ body {
   background-color: #141427;
 }
 
-.contact-email {
+address {
   font-family: 'Roboto', fallback, sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   color: #00FBA9;
   text-align: center;
-  margin-top: 50px
+  margin-top: 45px;
+  font-style: normal;
 }
 
-.logo {
-  width: 330px;
+address a {
+  color: #00FBA9;
+  text-decoration: none;
+}
+
+figure.logo {
+  width: 100%;
+  max-width: 350px;
   height: auto;
 }
 
-.logo img {
+figure.logo img {
   width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  figure.logo {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  address {
+    font-size: 28px;
+  }
 }
