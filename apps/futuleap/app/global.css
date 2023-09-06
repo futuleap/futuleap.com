@@ -1,6 +1,23 @@
 body {
   margin: 0;
   background-color: #141427;
+  color: #00FBA9;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 address {
@@ -8,12 +25,13 @@ address {
   font-size: 32px;
   color: #00FBA9;
   text-align: center;
-  margin-top: 45px;
+  margin-top: 30px;
+  padding-bottom: 30px;
   font-style: normal;
 }
 
 address a {
-  color: #00FBA9;
+  color: #5190e6;
   text-decoration: none;
 }
 
@@ -36,5 +54,103 @@ figure.logo img {
 
   address {
     font-size: 6vw;
+  }
+}
+
+.rocket-icon {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: -50px;
+  left: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  animation: flyRocket 10s infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes flyRocket {
+  0% {
+    bottom: -50px;
+    left: -5%;
+  }
+  50% {
+    bottom: 50%;
+    left: 105%;
+  }
+  100% {
+    bottom: 105%;
+    left: -5%;
+  }
+}
+
+
+address {
+  font-family: 'Roboto', fallback, sans-serif;
+  font-size: 32px;
+  color: #00FBA9;
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  font-style: normal;
+}
+
+address a {
+  color: #5190e6;
+  text-decoration: none;
+}
+
+figure.logo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+figure.logo img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  figure.logo {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  address {
+    font-size: 6vw;
+  }
+
+  .container {
+    height: auto;
+  }
+}
+
+.rocket-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: -50px;
+  left: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  animation: flyRocket 10s infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes flyRocket {
+  0% {
+    bottom: -50px;
+    left: -5%;
+  }
+  50% {
+    bottom: 50%;
+    left: 105%;
+  }
+  100% {
+    bottom: 105%;
+    left: -5%;
   }
 }
