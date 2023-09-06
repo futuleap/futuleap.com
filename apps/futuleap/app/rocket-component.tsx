@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 
 const RocketComponent: React.FC = () => {
   useEffect(() => {
-    const rocket = document.querySelector('.rocket-icon');
+    const rocket = document.querySelector('.rocket-icon') as HTMLElement;
 
     if (rocket) {
       const randomDuration = Math.random() * 10 + 5;
