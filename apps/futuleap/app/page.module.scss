@@ -66,3 +66,42 @@
     }
   }
 }
+
+.employeeList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+  .employeeCard {
+    width: 100%;
+    max-width: 250px;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .employeeList {
+    justify-content: space-between;
+  }
+}
