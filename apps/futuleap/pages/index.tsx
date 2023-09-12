@@ -8,14 +8,14 @@ export default function Index() {
     <RootLayout>
       <div className="container">
         <Head>
-          <title>FUTULEAP</title>
-          <meta name="description" content="Welcome to FutuLeap, a future-forward company ready to do what it takes."/>
+          <title>Futuleap</title>
+          <meta name="description" content="Welcome to Futuleap, a future-forward company ready to do what it takes."/>
           <link rel="icon" href={`/favicon.ico`}/>
         </Head>
 
         <header>
           <figure className="logo">
-            <img src={`/images/logo.png`} alt="Logo of FutuLeap"/>
+            <img src={`/images/logo.png`} alt="Logo of Futuleap"/>
           </figure>
         </header>
         <main>
