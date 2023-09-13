@@ -8,13 +8,17 @@ const BackgroundEffect = () => {
 
   const Sketch = (p) => {
     const nodes = [];
-    const numNodes = 120;
+    const densityFactor = 20000;
+
+    const calculateNumNodes = () => {
+      return Math.floor((p.windowWidth * p.windowHeight) / densityFactor);
+    };
 
     class Node {
       constructor() {
         this.pos = p.createVector(p.random(p.width), p.random(p.height));
-        this.vel = p.createVector(p.random(-0.3, 0.3), p.random(-0.3, 0.3)); // Reduced initial velocity
-        this.speedLimit = 1.5; // Reduced speed limit
+        this.vel = p.createVector(p.random(-0.3, 0.3), p.random(-0.3, 0.3));
+        this.speedLimit = 1.5;
       }
 
       update() {
@@ -38,7 +42,7 @@ const BackgroundEffect = () => {
         const forceDir = p.createVector(point.x - this.pos.x, point.y - this.pos.y);
         const distance = forceDir.mag();
         if (distance < 200) {
-          const forceStrength = p.map(distance, 0, 500, -1.5, 0); // Reduced strength of repulsion
+          const forceStrength = p.map(distance, 0, 500, -1.5, 0);
           forceDir.normalize().mult(forceStrength);
           this.vel.add(forceDir);
         }
@@ -59,6 +63,7 @@ const BackgroundEffect = () => {
       canvas.style('z-index', '-1');
       p.background('#141427');
 
+      const numNodes = calculateNumNodes();
       for (let i = 0; i < numNodes; i++) {
         nodes.push(new Node());
       }
@@ -87,7 +92,7 @@ const BackgroundEffect = () => {
         const forceDir = p.createVector(p.mouseX - node.pos.x, p.mouseY - node.pos.y);
         const distance = forceDir.mag();
         if (distance < 150) {
-          const forceStrength = p.map(distance, 0, 500, -0.8, -0.005); // Reduced mouse interaction strength
+          const forceStrength = p.map(distance, 0, 500, -0.8, -0.005);
           forceDir.normalize().mult(forceStrength);
           node.vel.add(forceDir);
         }
@@ -96,6 +101,12 @@ const BackgroundEffect = () => {
 
     p.windowResized = () => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
+      nodes.length = 0;  // Clear the nodes array
+
+      const numNodes = calculateNumNodes();
+      for (let i = 0; i < numNodes; i++) {
+        nodes.push(new Node());
+      }
     };
   };
 
