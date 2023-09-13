@@ -1,0 +1,40 @@
+
+@import '../../futuleap/public/styles/variables';
+
+body {
+  margin: 0;
+  background-color: #141427;
+  color: $primary-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    height: auto;
+  }
+}
+
+.socialLinks {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    .socialLink {
+      font-size: 4vw;
+
+      img {
+        width: 5vw;
+      }
+    }
+  }
+}

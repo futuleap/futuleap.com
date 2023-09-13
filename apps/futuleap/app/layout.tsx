@@ -1,6 +1,5 @@
 import React from 'react';
-import './global.css';
-import '../public/styles/fonts.css';
+import './global.scss';
 
 
 export default function RootLayout({ children }: { children: React.ReactNode; }) {

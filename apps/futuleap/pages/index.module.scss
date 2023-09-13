@@ -1,62 +1,38 @@
-.socialLinks {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
+@import '../../futuleap/public/styles/variables';
 
-  .socialButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: transparent;
-    color: #00FBA9;
-    border: 3px solid #04cd94;
-    padding: 5px 5px;
-    border-radius: 4px;
-    font-family: 'Roboto', fallback, sans-serif;
-    font-size: 16px;
-    text-decoration: none;
+.logo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 20px;
+
+  img {
     width: 100%;
-    text-align: center;
-    transition: background-color 0.2s;
-
-    img {
-      position: absolute;
-      left: 10px;
-      width: 20px;
-      height: 20px;
-    }
-
-    span.label {
-      display: block;
-      z-index: 1;
-    }
-
-    &:hover {
-      background-color: rgba(0, 251, 169, 0.1);
-    }
+    height: auto;
   }
 
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-    gap: 15px;
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
 
-    .socialButton {
-      width: 100%;
-    }
+.address {
+  font-family: $base-font;
+  font-size: 32px;
+  color: $primary-color;
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  font-style: normal;
 
-    .socialLink {
-      font-size: 4vw;
+  a {
+    color: $primary-link-color;
+    text-decoration: none;
+  }
 
-      img {
-        width: 5vw;
-      }
-    }
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: 6vw;
   }
 }

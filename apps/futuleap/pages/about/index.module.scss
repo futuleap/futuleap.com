@@ -1,57 +1,91 @@
+@import '../../../futuleap/public/styles/variables';
+
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+.logo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 34px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
 
 .employeeList {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 20px;
   justify-content: center;
-  font-family: 'Roboto', fallback, sans-serif;
+  gap: 20px;
+  font-family: $base-font;
 
   .employeeCard {
     margin: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     width: 100%;
     max-width: 800px;
-    border: 5px solid #5190e6;
+    border: 5px solid $accent-color;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
 
     img {
       max-width: 70%;
       height: auto;
       border-radius: 50%;
+      border: 2px solid $accent-color;
       transition: border 0.1s ease;
-      border: 2px solid #5190e6;
     }
 
     h2 {
-      margin-top: 1px;
-      margin-bottom: 1px;
+      margin: 1px 0;
       font-size: 1.6em;
       line-height: 1.3;
-      color: #00FBA9;
+      color: $primary-color;
       font-weight: bolder;
     }
 
     p {
-      margin-top: 5px;
-      margin-bottom: 5px;
+      margin: 5px 0;
       font-size: 0.9em;
-      color: #6D828F;
+      color: $secondary-text-color;
       line-height: 1.4;
     }
 
     .jobTitle {
-      font-size: 1.2em;
-      color: #5190e6;
-      font-weight: bolder;
       margin-top: 0.5em;
+      font-size: 1.2em;
+      color: $accent-color;
+      font-weight: bolder;
     }
 
     .contentBox {
@@ -77,92 +111,11 @@
     .descriptionText {
       padding: 5px;
       margin-bottom: 10px;
-      color: #5190e6;
-    }
-
-    &:hover {
-      transform: scale(1.01);
-    }
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
+      color: $accent-color;
     }
   }
-}
 
-
-@media (min-width: 768px) {
-  .employeeList {
+  @media (min-width: 768px) {
     justify-content: space-evenly;
   }
-}
-
-.socialButtons {
-  display: flex;
-  gap: 1rem;
-
-  .iconButton {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-}
-
-.socialLinks {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 5px;
-
-  .socialButton {
-    display: inline-flex;
-    padding: 2px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: transparent;
-    color: #00FBA9;
-    border: 3px solid #04cd94;
-    border-radius: 4px;
-    font-family: 'Roboto', fallback, sans-serif;
-    font-size: 16px;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-    transition: background-color 0.2s;
-
-    img {
-      position: absolute;
-      left: 10px;
-      width: 16px;
-      height: 16px;
-    }
-
-    span.label {
-      display: block;
-      z-index: 1;
-    }
-
-    &:hover {
-      background-color: rgba(0, 251, 169, 0.1);
-    }
-  }
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 48px;
 }
