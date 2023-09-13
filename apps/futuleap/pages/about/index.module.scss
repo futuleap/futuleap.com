@@ -44,7 +44,7 @@
     align-items: center;
     transition: transform 0.2s, box-shadow 0.2s;
     max-width: 800px;
-    border: 2px solid $accent-color;
+    border: 2px solid $secondary-color;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -54,15 +54,31 @@
       transform: scale(1.01);
     }
 
+    .socialLinks {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     &:nth-child(even) {
       flex-direction: row-reverse;
+      .socialLinks {
+        align-items: flex-start;
+      }
+    }
+
+    &:nth-child(odd) {
+      .socialLinks {
+        align-items: flex-end;
+      }
     }
 
     img {
       max-width: 70%;
       height: auto;
       border-radius: 50%;
-      border: 2px solid $accent-color;
+      border: 2px solid $primary-color;
       transition: border 0.1s ease;
     }
 

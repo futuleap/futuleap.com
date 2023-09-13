@@ -88,7 +88,7 @@ export function About(props: AboutProps) {
                     {employee.description}
                   </div>
 
-                  <div className="socialLinks">
+                  <div className={styles.socialLinks}>
                     <SocialButton
                       href={employee.linkedInUrl}
                       label="LinkedIn"
