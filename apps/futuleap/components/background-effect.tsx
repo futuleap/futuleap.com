@@ -45,7 +45,7 @@ const BackgroundEffect = () => {
         const forceDir = p.createVector(point.x - this.pos.x, point.y - this.pos.y);
         const distance = forceDir.mag();
         if (distance < 200) {
-          const forceStrength = p.map(distance, 0, 500, -1.5, 0);
+          const forceStrength = p.map(distance, 0, 400, -1.5, 0);
           forceDir.normalize().mult(forceStrength);
           this.vel.add(forceDir);
         }
