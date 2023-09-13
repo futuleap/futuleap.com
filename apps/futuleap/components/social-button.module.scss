@@ -20,7 +20,7 @@
   color: $primary-link-color;
   font-weight: bolder;
 
-  background-color: transparent;
+  background-color: $hover-bg-color;
   transition: background-color 0.2s;
 
   img {
@@ -36,7 +36,7 @@
   }
 
   &:hover {
-    background-color: $hover-bg-color;
+    background-color: $primary-background-color;
   }
 }
 

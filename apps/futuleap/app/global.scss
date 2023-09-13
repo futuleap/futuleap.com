@@ -1,10 +1,12 @@
-
 @import '../../futuleap/public/styles/variables';
 
-body {
-  margin: 0;
+body, html {
   color: $primary-color;
-  background-color: $primary-background-color;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .container {
@@ -23,4 +25,13 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
