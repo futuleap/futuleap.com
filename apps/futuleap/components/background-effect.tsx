@@ -6,8 +6,8 @@ const BackgroundEffect = () => {
     new p5(Sketch);
   }, []);
 
-  const Sketch = (p) => {
-    const nodes = [];
+  const Sketch = (p: any) => {
+    const nodes: any = [];
     const densityFactor = 20000;
 
     const calculateNumNodes = () => {
@@ -15,6 +15,9 @@ const BackgroundEffect = () => {
     };
 
     class Node {
+      private pos: any;
+      private vel: any;
+      private speedLimit: number;
       constructor() {
         this.pos = p.createVector(p.random(p.width), p.random(p.height));
         this.vel = p.createVector(p.random(-0.3, 0.3), p.random(-0.3, 0.3));
@@ -38,7 +41,7 @@ const BackgroundEffect = () => {
         this.repulsion({ x: p.windowWidth / 2, y: p.windowHeight / 6 });
       }
 
-      repulsion(point) {
+      repulsion(point: any) {
         const forceDir = p.createVector(point.x - this.pos.x, point.y - this.pos.y);
         const distance = forceDir.mag();
         if (distance < 200) {
