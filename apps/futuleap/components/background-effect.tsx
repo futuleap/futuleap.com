@@ -101,7 +101,7 @@ const BackgroundEffect = () => {
 
     p.windowResized = () => {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
-      nodes.length = 0;  // Clear the nodes array
+      nodes.length = 0;
 
       const numNodes = calculateNumNodes();
       for (let i = 0; i < numNodes; i++) {
