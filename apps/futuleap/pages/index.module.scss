@@ -18,13 +18,37 @@
   }
 }
 
+.copyButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus {
+    box-shadow: none;
+    color: $accent-color;
+  }
+
+  &:hover {
+    color: $accent-color;
+  }
+
+  svg {
+    background-color: transparent;
+    transition: color 0.1s;
+    box-shadow: none;
+    border: none;
+    outline: none;
+  }
+}
+
+
 .address {
   font-family: $base-font;
   font-size: 32px;
-  color: $primary-color;
   text-align: center;
   margin-top: 30px;
-  padding-bottom: 30px;
+  margin-bottom: 40px;
   font-style: normal;
 
   a {
@@ -36,3 +60,26 @@
     font-size: 6vw;
   }
 }
+.socialLinks {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    .socialLink {
+      font-size: 4vw;
+
+      img {
+        width: 5vw;
+      }
+    }
+  }
+}
+

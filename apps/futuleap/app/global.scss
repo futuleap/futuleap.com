@@ -3,8 +3,8 @@
 
 body {
   margin: 0;
-  background-color: #141427;
   color: $primary-color;
+  background-color: $primary-background-color;
 }
 
 .container {
@@ -19,22 +19,8 @@ body {
   }
 }
 
-.socialLinks {
-  position: relative;
+header {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
   justify-content: center;
   align-items: center;
-
-  @media screen and (max-width: $breakpoint-mobile) {
-    .socialLink {
-      font-size: 4vw;
-
-      img {
-        width: 5vw;
-      }
-    }
-  }
 }
