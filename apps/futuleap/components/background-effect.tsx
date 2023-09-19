@@ -52,7 +52,7 @@ const BackgroundEffect = () => {
       }
 
       display() {
-        p.fill(255, 100);
+        p.fill('#00FBA9');
         p.noStroke();
         p.ellipse(this.pos.x, this.pos.y, 5, 5);
       }
@@ -83,7 +83,7 @@ const BackgroundEffect = () => {
         for (let j = i + 1; j < nodes.length; j++) {
           const dist = p.dist(nodes[i].pos.x, nodes[i].pos.y, nodes[j].pos.x, nodes[j].pos.y);
           if (dist < 150) {
-            p.stroke(255, 255 - dist * 1.5);
+            p.stroke(81, 144, 230, 255 - dist * 1.5);
             p.line(nodes[i].pos.x, nodes[i].pos.y, nodes[j].pos.x, nodes[j].pos.y);
           }
         }
