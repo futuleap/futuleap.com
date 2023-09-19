@@ -8,7 +8,7 @@ const BackgroundEffect = () => {
 
   const Sketch = (p: any) => {
     const nodes: any = [];
-    const densityFactor = 20000;
+    const densityFactor = 40000;
 
     const calculateNumNodes = () => {
       return Math.floor((p.windowWidth * p.windowHeight) / densityFactor);
@@ -35,7 +35,6 @@ const BackgroundEffect = () => {
           this.vel.y *= -1;
         }
 
-        this.repulsion({ x: p.windowWidth / 2, y: p.windowHeight / 2 });
         this.repulsion({ x: p.windowWidth / 2, y: p.windowHeight / 4 });
         this.repulsion({ x: p.windowWidth / 2, y: p.windowHeight / 5 });
         this.repulsion({ x: p.windowWidth / 2, y: p.windowHeight / 6 });
