@@ -17,10 +17,10 @@
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  color: $primary-link-color;
+  color: $secondary-color;
   font-weight: bolder;
 
-  background-color: $hover-bg-color;
+  background-color: $primary-background-color;
   transition: background-color 0.2s;
 
   img {
@@ -36,7 +36,8 @@
   }
 
   &:hover {
-    background-color: $primary-background-color;
+    background-color: $secondary-color;
+    color: $primary-background-color;
   }
 }
 
