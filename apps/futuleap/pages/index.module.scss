@@ -18,6 +18,11 @@
   }
 }
 
+.content {
+  display: grid;
+  align-items: center;
+}
+
 .copyButton {
   background-color: transparent;
   border: none;
